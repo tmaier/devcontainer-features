@@ -1,0 +1,8 @@
+{
+  "id": "yek",
+  "version": "1.0.0",
+  "name": "yek",
+  "description": "Installs the yek https://github.com/bodo-run/yek",
+  "options": {},
+  "installsAfter": []
+}
