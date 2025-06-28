@@ -123,7 +123,7 @@ This repo contains a **GitHub Action** [workflow](.github/workflows/release.yaml
 
 *Allow GitHub Actions to create and approve pull requests* should be enabled in the repository's `Settings > Actions > General > Workflow permissions` for auto generation of `src/<feature>/README.md` per Feature (which merges any existing `src/<feature>/NOTES.md`).
 
-By default, each Feature will be prefixed with the `<owner/<repo>` namespace.  For example, the two Features in this repository can be referenced in a `devcontainer.json` with:
+By default, each Feature will be prefixed with the `tmaier/devcontainer-features` namespace.  For example, the two Features in this repository can be referenced in a `devcontainer.json` with:
 
 ```
 ghcr.io/devcontainers/feature-starter/color:1
@@ -141,7 +141,7 @@ Note that by default, GHCR packages are marked as `private`.  To stay within the
 This can be done by navigating to the Feature's "package settings" page in GHCR, and setting the visibility to 'public`.  The URL may look something like:
 
 ```
-https://github.com/users/<owner>/packages/container/<repo>%2F<featureName>/settings
+https://github.com/users/tmaier/packages/container/devcontainer-features%2F<featureName>/settings
 ```
 
 <img width="669" alt="image" src="https://user-images.githubusercontent.com/23246594/185244705-232cf86a-bd05-43cb-9c25-07b45b3f4b04.png">
@@ -168,14 +168,14 @@ An example `devcontainer.json` can be found below.
 {
     "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
     "features": {
-     "ghcr.io/my-org/private-features/hello:1": {
+     "ghcr.io/tmaier/devcontainer-features/hello:1": {
             "greeting": "Hello"
         }
     },
     "customizations": {
         "codespaces": {
             "repositories": {
-                "my-org/private-features": {
+                "tmaier/devcontainer-features": {
                     "permissions": {
                         "packages": "read",
                         "contents": "read"
