@@ -1,0 +1,14 @@
+{
+  "id": "chrome",
+  "version": "1.0.0",
+  "name": "Google Chrome for Containers",
+  "description": "Installs Google Chrome with container-specific configurations and wrapper script",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "cline.chromeExecutablePath": "/usr/local/bin/chrome"
+      }
+    }
+  },
+  "installsAfter": []
+}
