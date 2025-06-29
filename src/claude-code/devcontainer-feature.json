@@ -13,5 +13,12 @@
       "target": "${containerEnv:_REMOTE_USER_HOME}/.claude",
       "type": "bind"
     }
-  ]
+  ],
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "anthropic.claude-code"
+      ]
+    }
+  }
 }
