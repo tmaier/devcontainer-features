@@ -13,8 +13,14 @@ jobs:
     strategy:
       matrix:
         features:
+          - adr-tools
+          - chrome
           - color
           - hello
+          - imagemagick
+          - mc
+          - yek
+          - yq
         baseImage:
           - debian:latest
           - ubuntu:latest
@@ -34,8 +40,14 @@ jobs:
     strategy:
       matrix:
         features:
+          - adr-tools
+          - chrome
           - color
           - hello
+          - imagemagick
+          - mc
+          - yek
+          - yq
     steps:
       - uses: actions/checkout@v4
 
