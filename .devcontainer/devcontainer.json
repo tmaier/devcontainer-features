@@ -11,6 +11,9 @@
                         ],
                         "url": "https://raw.githubusercontent.com/devcontainers/spec/main/schemas/devContainerFeature.schema.json"
                     }
+                ],
+                "github.copilot.chat.codeGeneration.instructions": [
+                    { "file": "CLAUDE.md" }
                 ]
             },
             "extensions": [
