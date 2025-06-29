@@ -6,6 +6,22 @@ This feature installs [Claude Code](https://www.anthropic.com/claude-code), Anth
 
 - Node.js
 
+## Manual config for `devcontainer.json`
+
+Mount the local `~/.claude/` directory into the Dev Contaier.
+Add the following mount to the `devcontainer.json` file.
+Replace `vscode` with the actual name of your user (see `remoteUser` property)
+
+```json
+  "mounts": [
+    {
+      "source": "${localEnv:HOME}/.claude",
+      "target": "/home/vscode/.claude",
+      "type": "bind"
+    }
+  ],
+```
+
 ## Usage
 
 After installation, run `claude` in your project directory to get started.
