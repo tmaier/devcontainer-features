@@ -3,14 +3,20 @@
   "version": "1.0.0",
   "name": "Claude Code",
   "description": "Installs Claude Code CLI for AI-powered development assistance",
-  "options": {},
+  "options": {
+    "remoteUser": {
+      "type": "string",
+      "default": "vscode",
+      "description": "The remote user that will be used in the container. Must match the container's remote user."
+    }
+  },
   "installsAfter": [
     "ghcr.io/devcontainers/features/node"
   ],
   "mounts": [
     {
       "source": "${localEnv:HOME}/.claude",
-      "target": "${containerEnv:_REMOTE_USER_HOME}/.claude",
+      "target": "/home/${options.remoteUser}/.claude",
       "type": "bind"
     }
   ],

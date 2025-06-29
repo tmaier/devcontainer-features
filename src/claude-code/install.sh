@@ -3,6 +3,13 @@ set -e
 
 echo "Installing Claude Code..."
 
+# Validate remoteUser option matches actual remote user
+if [ -n "$_REMOTE_USER" ] && [ "$REMOTEUSER" != "$_REMOTE_USER" ]; then
+    echo "Error: The remoteUser setting ('$REMOTEUSER') does not match your container's user ('$_REMOTE_USER')."
+    echo "Please update the remoteUser option in this feature configuration to match remoteUser in devcontainer.json"
+    exit 1
+fi
+
 # Check if Node.js is available
 if ! command -v node &> /dev/null; then
     echo "Error: Node.js is required but not found. Please ensure the Node.js feature is installed."

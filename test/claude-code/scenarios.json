@@ -5,13 +5,17 @@
             "ghcr.io/devcontainers/features/node:1": {
                 "version": "lts"
             },
-            "claude-code": {}
+            "claude-code": {
+                "remoteUser": "vscode"
+            }
         }
     },
     "claude_code_with_node_image": {
         "image": "mcr.microsoft.com/devcontainers/javascript-node:1-20-bullseye",
         "features": {
-            "claude-code": {}
+            "claude-code": {
+                "remoteUser": "node"
+            }
         }
     },
     "claude_code_with_custom_user": {
@@ -21,7 +25,9 @@
             "ghcr.io/devcontainers/features/node:1": {
                 "version": "lts"
             },
-            "claude-code": {}
+            "claude-code": {
+                "remoteUser": "testuser"
+            }
         }
     }
 }
