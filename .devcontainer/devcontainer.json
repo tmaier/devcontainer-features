@@ -3,6 +3,7 @@
     "customizations": {
         "vscode": {
             "settings": {
+                "files.insertFinalNewline": true,
                 "json.schemas": [
                     {
                         "fileMatch": [

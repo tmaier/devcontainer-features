@@ -1,6 +1,6 @@
 {
   "id": "yq",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "name": "yq",
   "description": "Installs yq for yaml processing",
   "options": {},

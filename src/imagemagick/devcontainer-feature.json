@@ -1,6 +1,6 @@
 {
-  "id": "yq",
-  "version": "1.0.0",
+  "id": "imagemagick",
+  "version": "1.0.1",
   "name": "imagemagick",
   "description": "Installs imagemagick",
   "options": {},

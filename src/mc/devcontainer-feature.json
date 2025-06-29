@@ -1,6 +1,6 @@
 {
   "id": "mc",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "name": "MinIO Client (mc)",
   "description": "Installs the MinIO Client (mc)",
   "options": {},

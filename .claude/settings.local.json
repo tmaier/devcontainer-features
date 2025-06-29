@@ -1,7 +1,8 @@
 {
   "permissions": {
     "allow": [
-      "WebFetch(domain:containers.dev)"
+      "WebFetch(domain:containers.dev)",
+      "WebFetch(domain:github.com)"
     ],
     "deny": []
   }
