@@ -1,0 +1,18 @@
+{
+  "id": "claude-code",
+  "version": "1.0.0",
+  "name": "Claude Code",
+  "description": "Installs Claude Code CLI for AI-powered development assistance",
+  "options": {},
+  "installsAfter": [
+    "ghcr.io/devcontainers/features/node"
+  ],
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "anthropic.claude-code"
+      ]
+    }
+  },
+  "postStartCommand": "if command -v claude &>/dev/null; then claude update || true; fi"
+}

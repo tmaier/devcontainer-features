@@ -2,12 +2,14 @@
   "permissions": {
     "allow": [
       "Bash(devcontainer features test:*)",
+      "Bash(devcontainer features validate:*)",
       "Bash(git add:*)",
       "Bash(git checkout:*)",
       "Bash(git commit:*)",
       "Bash(git rebase main)",
       "Bash(mkdir:*)",
       "WebFetch(domain:containers.dev)",
+      "WebFetch(domain:docs.anthropic.com)",
       "WebFetch(domain:github.com)"
     ],
     "deny": []
