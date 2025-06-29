@@ -31,6 +31,7 @@ This is Tobias Maier's Dev Container Features collection - a repository for crea
 
 - `adr-tools` - Architecture Decision Records tools
 - `chrome` - Google Chrome installation
+- `claude-code` - Claude Code CLI for AI-powered development assistance
 - `imagemagick` - ImageMagick image processing tools
 - `mc` - MinIO Client for object storage
 - `yek` - Repository serialization tool for LLMs

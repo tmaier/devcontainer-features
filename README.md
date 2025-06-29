@@ -8,6 +8,7 @@ A collection of custom [Dev Container Features](https://containers.dev/implement
 |---------|-------------|------------|
 | [adr-tools](https://github.com/tmaier/devcontainer-features/tree/main/src/adr-tools) | Architecture Decision Records management tools | `ghcr.io/tmaier/devcontainer-features/adr-tools` |
 | [chrome](https://github.com/tmaier/devcontainer-features/tree/main/src/chrome) | Google Chrome with container-optimized wrapper script | `ghcr.io/tmaier/devcontainer-features/chrome` |
+| [claude-code](https://github.com/tmaier/devcontainer-features/tree/main/src/claude-code) | Claude Code CLI for AI-powered development assistance | `ghcr.io/tmaier/devcontainer-features/claude-code` |
 | [imagemagick](https://github.com/tmaier/devcontainer-features/tree/main/src/imagemagick) | ImageMagick image processing library with PDF support | `ghcr.io/tmaier/devcontainer-features/imagemagick` |
 | [mc](https://github.com/tmaier/devcontainer-features/tree/main/src/mc) | MinIO Client for object storage operations | `ghcr.io/tmaier/devcontainer-features/mc` |
 | [yek](https://github.com/tmaier/devcontainer-features/tree/main/src/yek) | Repository file serialization tool for LLM consumption | `ghcr.io/tmaier/devcontainer-features/yek` |

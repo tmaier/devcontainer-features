@@ -1,0 +1,27 @@
+{
+    "claude_code_with_node_feature": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "ghcr.io/devcontainers/features/node:1": {
+                "version": "lts"
+            },
+            "claude-code": {}
+        }
+    },
+    "claude_code_with_node_image": {
+        "image": "mcr.microsoft.com/devcontainers/javascript-node:1-20-bullseye",
+        "features": {
+            "claude-code": {}
+        }
+    },
+    "claude_code_with_custom_user": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "remoteUser": "testuser",
+        "features": {
+            "ghcr.io/devcontainers/features/node:1": {
+                "version": "lts"
+            },
+            "claude-code": {}
+        }
+    }
+}

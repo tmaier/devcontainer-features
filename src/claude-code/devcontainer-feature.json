@@ -1,0 +1,17 @@
+{
+  "id": "claude-code",
+  "version": "1.0.0",
+  "name": "Claude Code",
+  "description": "Installs Claude Code CLI for AI-powered development assistance",
+  "options": {},
+  "installsAfter": [
+    "ghcr.io/devcontainers/features/node"
+  ],
+  "mounts": [
+    {
+      "source": "${localEnv:HOME}/.claude",
+      "target": "${containerEnv:_REMOTE_USER_HOME}/.claude",
+      "type": "bind"
+    }
+  ]
+}
