@@ -1,0 +1,8 @@
+{
+    "adr_tools_test": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "adr-tools": {}
+        }
+    }
+}

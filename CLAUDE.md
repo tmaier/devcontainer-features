@@ -78,6 +78,31 @@ echo "The provided favorite color is: ${FAVORITE}"
 
 ## Testing and Validation
 
+### Test Structure
+Tests are organized in the `test/` directory with:
+- `test/<feature-name>/` - Feature-specific test scenarios
+- `test/_global/` - Global scenarios combining multiple features
+
+Each test directory contains:
+- `scenarios.json` - Test configurations with different options and base images
+- `*.sh` - Test scripts that verify feature functionality
+
+### Test Scripts
+Test scripts follow this pattern:
+```bash
+#!/bin/bash
+set -e
+
+# Import test library
+source dev-container-features-test-lib
+
+# Test the installed functionality
+check "description" bash -c "command | grep 'expected-output'"
+
+# Report results
+reportResults
+```
+
 ### Key Commands
 
 #### Testing Features

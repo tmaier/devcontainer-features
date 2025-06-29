@@ -4,5 +4,8 @@
   "name": "ADR Tools",
   "description": "Installs ADR Tools for managing Architecture Decision Records",
   "options": {},
-  "installsAfter": []
+  "installsAfter": [],
+  "containerEnv": {
+    "PATH": "/usr/local/bin/adr-tools-3.0.0/src:$PATH"
+  }
 }

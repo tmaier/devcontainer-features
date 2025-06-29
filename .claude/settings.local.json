@@ -3,7 +3,8 @@
     "allow": [
       "WebFetch(domain:containers.dev)",
       "WebFetch(domain:github.com)",
-      "Bash(devcontainer features test:*)"
+      "Bash(devcontainer features test:*)",
+      "Bash(mkdir:*)"
     ],
     "deny": []
   }
