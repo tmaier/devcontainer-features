@@ -13,9 +13,7 @@ Installs Google Chrome with container-specific configurations and wrapper script
 
 
 
-# Chrome Dev Container Feature - Additional Notes
-
-## Description
+## What This Feature Installs
 
 Running Chrome in a container environment can be challenging due to sandbox, display, and security constraints. This feature installs:
 
@@ -23,42 +21,31 @@ Running Chrome in a container environment can be challenging due to sandbox, dis
 2. A specialized wrapper script at `/usr/local/bin/chrome` that configures Chrome to work properly in containers
 3. The necessary dependencies for Chrome to run in a container
 
-## Important Configuration
+## Required Configuration
 
-Add the required run argument to your `devcontainer.json`:
+**Important**: Add the required run argument to your `devcontainer.json`:
 
 ```json
 "runArgs": ["--add-host=host.docker.internal:host-gateway"]
 ```
 
-> **Important**: The `--add-host=host.docker.internal:host-gateway` run argument is **required** for the Chrome wrapper to properly connect to the host machine for display forwarding and X11 connections. Without this argument, `host.docker.internal` will not resolve correctly.
+> The `--add-host=host.docker.internal:host-gateway` run argument is **required** for the Chrome wrapper to properly connect to the host machine for display forwarding and X11 connections.
+## Using the Chrome Wrapper
 
-## Always Use the Wrapper Script
+The key component is the Chrome wrapper script at `/usr/local/bin/chrome`. **Always use this wrapper** instead of calling `google-chrome-stable` directly.
 
-The key component of this feature is the Chrome wrapper script located at `/usr/local/bin/chrome`. We **strongly recommend** configuring all tools to use this wrapper script rather than calling `google-chrome-stable` directly.
+### Tool Configuration
 
-### For Cline
+**Cline**: Automatically configured via VS Code settings.
 
-The feature automatically configures Cline to use the wrapper by setting:
-
-```json
-"cline.chromeExecutablePath": "/usr/local/bin/chrome"
-```
-
-### For Playwright
-
-Configure Playwright to use the wrapper script:
-
+**Playwright**:
 ```javascript
 const browser = await playwright.chromium.launch({
   executablePath: '/usr/local/bin/chrome',
 })
 ```
 
-### For Puppeteer
-
-Configure Puppeteer as follows:
-
+**Puppeteer**:
 ```javascript
 const browser = await puppeteer.launch({
   executablePath: '/usr/local/bin/chrome',
