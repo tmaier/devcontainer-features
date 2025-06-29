@@ -42,6 +42,7 @@ jobs:
         features:
           - adr-tools
           - chrome
+          - claude-code
           - color
           - hello
           - imagemagick
