@@ -22,7 +22,8 @@
         }
     },
     "features": {
-        "ghcr.io/devcontainers/features/docker-in-docker:2": {}
+        "ghcr.io/devcontainers/features/docker-in-docker:2": {},
+        "ghcr.io/tmaier/devcontainer-features/claude-code:1": {}
     },
     "mounts": [
         "source=${localEnv:HOME}/.claude,target=/home/node/.claude,type=bind"
