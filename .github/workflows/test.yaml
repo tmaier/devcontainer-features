@@ -47,6 +47,7 @@ jobs:
           - hello
           - imagemagick
           - mc
+          - mcp-language-server
           - yek
           - yq
     steps:

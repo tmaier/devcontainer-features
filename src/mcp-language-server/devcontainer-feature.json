@@ -1,0 +1,16 @@
+{
+  "id": "mcp-language-server",
+  "version": "1.0.0",
+  "name": "MCP Language Server",
+  "description": "Installs MCP Language Server - runs and exposes language servers to LLMs for semantic code navigation",
+  "options": {
+    "version": {
+      "type": "string",
+      "default": "latest",
+      "description": "Version of MCP Language Server to install. Use 'latest' for the latest version."
+    }
+  },
+  "installsAfter": [
+    "ghcr.io/devcontainers/features/go"
+  ]
+}

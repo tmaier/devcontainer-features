@@ -1,0 +1,28 @@
+{
+    "mcp_language_server_with_go_feature": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "ghcr.io/devcontainers/features/go:1": {
+                "version": "latest"
+            },
+            "mcp-language-server": {}
+        }
+    },
+    "mcp_language_server_with_go_image": {
+        "image": "mcr.microsoft.com/devcontainers/go:1-1.21-bullseye",
+        "features": {
+            "mcp-language-server": {}
+        }
+    },
+    "mcp_language_server_with_version": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "ghcr.io/devcontainers/features/go:1": {
+                "version": "latest"
+            },
+            "mcp-language-server": {
+                "version": "latest"
+            }
+        }
+    }
+}
