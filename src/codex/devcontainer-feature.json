@@ -1,0 +1,18 @@
+{
+  "id": "codex",
+  "version": "1.0.0",
+  "name": "Codex CLI",
+  "description": "Installs OpenAI Codex CLI for local AI-powered coding assistance",
+  "options": {},
+  "installsAfter": [
+    "ghcr.io/devcontainers/features/node"
+  ],
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "openai.chatgpt"
+      ]
+    }
+  },
+  "postStartCommand": "if command -v codex &>/dev/null; then codex --version || true; fi"
+}
