@@ -1,0 +1,18 @@
+{
+  "id": "gemini-cli",
+  "version": "1.0.0",
+  "name": "Gemini CLI",
+  "description": "Installs Google Gemini CLI for AI-powered development assistance",
+  "options": {},
+  "installsAfter": [
+    "ghcr.io/devcontainers/features/node"
+  ],
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "Google.gemini-cli-vscode-ide-companion"
+      ]
+    }
+  },
+  "postStartCommand": "if command -v gemini &>/dev/null; then gemini --version || true; fi"
+}

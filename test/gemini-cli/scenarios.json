@@ -1,0 +1,27 @@
+{
+    "gemini_cli_with_node_feature": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "ghcr.io/devcontainers/features/node:1": {
+                "version": "lts"
+            },
+            "gemini-cli": {}
+        }
+    },
+    "gemini_cli_with_node_image": {
+        "image": "mcr.microsoft.com/devcontainers/javascript-node:1-20-bullseye",
+        "features": {
+            "gemini-cli": {}
+        }
+    },
+    "gemini_cli_with_custom_user": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "remoteUser": "vscode",
+        "features": {
+            "ghcr.io/devcontainers/features/node:1": {
+                "version": "lts"
+            },
+            "gemini-cli": {}
+        }
+    }
+}
