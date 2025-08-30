@@ -7,7 +7,7 @@ Installs ADR Tools for managing Architecture Decision Records
 
 ```json
 "features": {
-    "ghcr.io/tmaier/devcontainer-features/adr-tools:1": {}
+    "ghcr.io/iot-rocket/devcontainer-features/adr-tools:1": {}
 }
 ```
 
@@ -25,4 +25,4 @@ For usage instructions and documentation, see the [official ADR Tools repository
 
 ---
 
-_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/tmaier/devcontainer-features/blob/main/src/adr-tools/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._
+_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/iot-rocket/devcontainer-features/blob/main/src/adr-tools/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._

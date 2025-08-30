@@ -7,7 +7,7 @@ Installs Google Chrome with container-specific configurations and wrapper script
 
 ```json
 "features": {
-    "ghcr.io/tmaier/devcontainer-features/chrome:1": {}
+    "ghcr.io/iot-rocket/devcontainer-features/chrome:1": {}
 }
 ```
 
@@ -100,4 +100,4 @@ For more detailed documentation, see `/usr/local/share/chrome-wrapper/README.md`
 
 ---
 
-_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/tmaier/devcontainer-features/blob/main/src/chrome/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._
+_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/iot-rocket/devcontainer-features/blob/main/src/chrome/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._

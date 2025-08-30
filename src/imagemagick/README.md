@@ -7,7 +7,7 @@ Installs imagemagick
 
 ```json
 "features": {
-    "ghcr.io/tmaier/devcontainer-features/imagemagick:1": {}
+    "ghcr.io/iot-rocket/devcontainer-features/imagemagick:1": {}
 }
 ```
 
@@ -31,4 +31,4 @@ For complete usage instructions and documentation, visit the official ImageMagic
 
 ---
 
-_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/tmaier/devcontainer-features/blob/main/src/imagemagick/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._
+_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/iot-rocket/devcontainer-features/blob/main/src/imagemagick/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._

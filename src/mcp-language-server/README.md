@@ -7,7 +7,7 @@ Installs MCP Language Server - runs and exposes language servers to LLMs for sem
 
 ```json
 "features": {
-    "ghcr.io/tmaier/devcontainer-features/mcp-language-server:1": {}
+    "ghcr.io/iot-rocket/devcontainer-features/mcp-language-server:1": {}
 }
 ```
 
@@ -51,4 +51,4 @@ After installation, configure MCP Language Server in your MCP client settings:
 
 ---
 
-_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/tmaier/devcontainer-features/blob/main/src/mcp-language-server/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._
+_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/iot-rocket/devcontainer-features/blob/main/src/mcp-language-server/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._

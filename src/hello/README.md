@@ -7,7 +7,7 @@ A hello world feature
 
 ```json
 "features": {
-    "ghcr.io/tmaier/devcontainer-features/hello:1": {}
+    "ghcr.io/iot-rocket/devcontainer-features/hello:1": {}
 }
 ```
 
@@ -21,4 +21,4 @@ A hello world feature
 
 ---
 
-_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/tmaier/devcontainer-features/blob/main/src/hello/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._
+_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/iot-rocket/devcontainer-features/blob/main/src/hello/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._

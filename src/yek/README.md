@@ -7,7 +7,7 @@ Installs yek, a tool for serializing repository files for LLM consumption
 
 ```json
 "features": {
-    "ghcr.io/tmaier/devcontainer-features/yek:1": {}
+    "ghcr.io/iot-rocket/devcontainer-features/yek:1": {}
 }
 ```
 
@@ -27,4 +27,4 @@ For complete usage instructions and documentation, visit the official yek reposi
 
 ---
 
-_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/tmaier/devcontainer-features/blob/main/src/yek/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._
+_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/iot-rocket/devcontainer-features/blob/main/src/yek/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._

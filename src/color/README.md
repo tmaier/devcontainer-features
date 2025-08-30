@@ -7,7 +7,7 @@ A feature to remind you of your favorite color
 
 ```json
 "features": {
-    "ghcr.io/tmaier/devcontainer-features/color:1": {}
+    "ghcr.io/iot-rocket/devcontainer-features/color:1": {}
 }
 ```
 
@@ -21,4 +21,4 @@ A feature to remind you of your favorite color
 
 ---
 
-_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/tmaier/devcontainer-features/blob/main/src/color/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._
+_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/iot-rocket/devcontainer-features/blob/main/src/color/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._
