@@ -33,6 +33,7 @@ This is Tobias Maier's Dev Container Features collection - a repository for crea
 - `chrome` - Google Chrome installation
 - `claude-code` - Claude Code CLI for AI-powered development assistance
 - `codex` - OpenAI Codex CLI for local AI-powered coding assistance
+- `gemini-cli` - Google Gemini CLI for AI-powered development assistance
 - `imagemagick` - ImageMagick image processing tools
 - `mc` - MinIO Client for object storage
 - `mcp-language-server` - MCP Language Server for semantic code navigation
