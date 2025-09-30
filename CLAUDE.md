@@ -35,6 +35,7 @@ This is Tobias Maier's Dev Container Features collection - a repository for crea
 - `imagemagick` - ImageMagick image processing tools
 - `mc` - MinIO Client for object storage
 - `mcp-language-server` - MCP Language Server for semantic code navigation
+- `typst` - Typst markup-based typesetting system
 - `yek` - Repository serialization tool for LLMs
 - `yq` - YAML processing tool
 

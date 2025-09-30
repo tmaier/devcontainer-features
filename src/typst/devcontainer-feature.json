@@ -1,0 +1,14 @@
+{
+  "id": "typst",
+  "version": "1.0.0",
+  "name": "Typst",
+  "description": "Installs Typst - a markup-based typesetting system that is powerful and easy to learn",
+  "options": {
+    "version": {
+      "type": "string",
+      "default": "latest",
+      "description": "Version of Typst to install. Use 'latest' for the latest version, or specify a version like '0.13.1'."
+    }
+  },
+  "installsAfter": []
+}
