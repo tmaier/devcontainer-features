@@ -15,6 +15,7 @@ jobs:
         features:
           - adr-tools
           - chrome
+          - codex
           - color
           - hello
           - imagemagick
@@ -44,6 +45,7 @@ jobs:
           - adr-tools
           - chrome
           - claude-code
+          - codex
           - color
           - hello
           - imagemagick
