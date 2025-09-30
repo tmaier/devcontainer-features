@@ -1,3 +1,4 @@
+
 # Codex CLI (codex)
 
 Installs OpenAI Codex CLI for local AI-powered coding assistance
@@ -53,7 +54,6 @@ After installation, run `codex` in your project directory to get started.
 You'll need to sign in with a ChatGPT account (Plus, Pro, Team, Edu, or Enterprise plans recommended for best experience).
 
 For detailed documentation, see the [Codex CLI documentation](https://github.com/openai/codex).
-
 
 ---
 
