@@ -1,3 +1,4 @@
+
 # Gemini CLI (gemini-cli)
 
 Installs Google Gemini CLI for AI-powered development assistance
@@ -53,7 +54,6 @@ After installation, run `gemini` in your project directory to get started.
 You'll need to authenticate with Google AI Studio to access the Gemini API.
 
 For detailed documentation, see the [Gemini CLI documentation](https://github.com/google-gemini/gemini-cli).
-
 
 ---
 
