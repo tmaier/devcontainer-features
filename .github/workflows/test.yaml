@@ -19,6 +19,7 @@ jobs:
           - hello
           - imagemagick
           - mc
+          - typst
           - yek
           - yq
         baseImage:
@@ -48,6 +49,7 @@ jobs:
           - imagemagick
           - mc
           - mcp-language-server
+          - typst
           - yek
           - yq
     steps:
