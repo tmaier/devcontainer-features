@@ -8,4 +8,4 @@ if ! command -v curl >/dev/null 2>&1; then
 fi
 
 # Install yek
-curl -fsSL https://bodo.run/yek.sh | bash
+curl -fsSL https://azimi.me/yek.sh | bash
