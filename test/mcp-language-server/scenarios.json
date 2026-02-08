@@ -8,8 +8,14 @@
             "mcp-language-server": {}
         }
     },
+    "mcp_language_server_without_go": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "mcp-language-server": {}
+        }
+    },
     "mcp_language_server_with_go_image": {
-        "image": "mcr.microsoft.com/devcontainers/go:1-1.24-bookworm",
+        "image": "mcr.microsoft.com/devcontainers/go:1-bookworm",
         "features": {
             "mcp-language-server": {}
         }

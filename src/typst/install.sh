@@ -1,5 +1,6 @@
 #!/bin/sh
 set -e
+export DEBIAN_FRONTEND=noninteractive
 
 echo "Installing Typst..."
 

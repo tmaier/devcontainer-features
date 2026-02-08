@@ -1,15 +1,17 @@
 #!/bin/bash
 set -e
+export DEBIAN_FRONTEND=noninteractive
 
 echo "Installing Codex CLI..."
 
-# Check if Node.js is available, install if missing
+# Install Node.js if not available
 if ! command -v node &> /dev/null; then
     echo "Node.js not found. Installing Node.js 22.x..."
-    apt-get update
+    apt-get update -y
     apt-get install -y --no-install-recommends curl ca-certificates
     curl -fsSL https://deb.nodesource.com/setup_22.x | bash -
     apt-get install -y --no-install-recommends nodejs
+    rm -rf /var/lib/apt/lists/*
 fi
 
 # Check Node.js version (requires 18+)

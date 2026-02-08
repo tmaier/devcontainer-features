@@ -1,12 +1,37 @@
 #!/bin/bash
 set -e
+export DEBIAN_FRONTEND=noninteractive
 
 echo "Installing MCP Language Server..."
 
-# Check if Go is available
+# Install Go if not available
 if ! command -v go &> /dev/null; then
-    echo "Error: Go is required but not found. Please ensure the Go feature is installed."
-    exit 1
+    echo "Go not found. Installing Go via official tarball..."
+
+    apt-get update -y
+    apt-get install -y --no-install-recommends curl ca-certificates tar
+
+    ARCH=$(dpkg --print-architecture)
+    case "$ARCH" in
+        amd64|arm64) ;;
+        *)
+            echo "Unsupported architecture: $ARCH"
+            exit 1
+            ;;
+    esac
+
+    GO_VERSION="1.24.1"
+    echo "Installing Go ${GO_VERSION} for ${ARCH}..."
+    curl -fsSL -o /tmp/go.tar.gz "https://go.dev/dl/go${GO_VERSION}.linux-${ARCH}.tar.gz"
+    tar -C /usr/local -xzf /tmp/go.tar.gz
+    rm -f /tmp/go.tar.gz
+
+    ln -sf /usr/local/go/bin/go /usr/local/bin/go
+    ln -sf /usr/local/go/bin/gofmt /usr/local/bin/gofmt
+    export PATH="/usr/local/go/bin:$PATH"
+
+    rm -rf /var/lib/apt/lists/*
+    echo "Go $(go version) installed successfully."
 fi
 
 # Install MCP Language Server
@@ -19,25 +44,17 @@ else
     go install github.com/isaacphi/mcp-language-server@v${MCP_VERSION}
 fi
 
-# Ensure Go bin directory is in PATH
-GO_BIN_PATH=$(go env GOPATH)/bin
-if ! echo "$PATH" | grep -q "$GO_BIN_PATH"; then
-    echo "Adding Go bin directory to PATH..."
-    echo "export PATH=\"\$PATH:$GO_BIN_PATH\"" >> /etc/bash.bashrc
-    export PATH="$PATH:$GO_BIN_PATH"
-fi
-
-# Verify installation
-if ! command -v mcp-language-server &> /dev/null; then
-    # Check if it's available in GOPATH/bin
-    if [ -f "$GO_BIN_PATH/mcp-language-server" ]; then
-        echo "MCP Language Server installed to $GO_BIN_PATH/mcp-language-server"
-        # Create a symlink to make it globally available
-        ln -sf "$GO_BIN_PATH/mcp-language-server" /usr/local/bin/mcp-language-server
-    else
-        echo "Error: MCP Language Server installation failed"
-        exit 1
-    fi
+# Copy binary to /usr/local/bin for system-wide access.
+# go install places the binary in $GOPATH/bin (typically /root/go/bin),
+# which is inaccessible to non-root users. We copy instead of symlink
+# because /root has mode 700 (same approach as the yek feature).
+GO_BIN_PATH="$(go env GOPATH)/bin"
+if [ -f "$GO_BIN_PATH/mcp-language-server" ]; then
+    cp "$GO_BIN_PATH/mcp-language-server" /usr/local/bin/mcp-language-server
+    chmod 755 /usr/local/bin/mcp-language-server
+else
+    echo "Error: MCP Language Server installation failed"
+    exit 1
 fi
 
 echo "MCP Language Server installed successfully!"

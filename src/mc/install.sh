@@ -1,5 +1,6 @@
 #!/bin/sh
 set -e
+export DEBIAN_FRONTEND=noninteractive
 
 # Update package list and install wget and ca-certificates if not available
 if ! command -v wget >/dev/null 2>&1; then
