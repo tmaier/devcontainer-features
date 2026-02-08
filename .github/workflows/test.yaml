@@ -27,6 +27,7 @@ jobs:
           - codex
           - color
           - gemini-cli
+          - gitlab
           - hello
           - imagemagick
           - mc
@@ -69,6 +70,7 @@ jobs:
           - codex
           - color
           - gemini-cli
+          - gitlab
           - hello
           - imagemagick
           - mc

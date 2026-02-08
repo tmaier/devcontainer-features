@@ -11,6 +11,7 @@ A collection of custom [Dev Container Features](https://containers.dev/implement
 | [claude-code](https://github.com/tmaier/devcontainer-features/tree/main/src/claude-code) | Claude Code CLI for AI-powered development assistance | `ghcr.io/tmaier/devcontainer-features/claude-code` |
 | [codex](https://github.com/tmaier/devcontainer-features/tree/main/src/codex) | OpenAI Codex CLI for local AI-powered coding assistance | `ghcr.io/tmaier/devcontainer-features/codex` |
 | [gemini-cli](https://github.com/tmaier/devcontainer-features/tree/main/src/gemini-cli) | Google Gemini CLI for AI-powered development assistance | `ghcr.io/tmaier/devcontainer-features/gemini-cli` |
+| [gitlab](https://github.com/tmaier/devcontainer-features/tree/main/src/gitlab) | GitLab CLI and workflow extension for GitLab integration | `ghcr.io/tmaier/devcontainer-features/gitlab` |
 | [imagemagick](https://github.com/tmaier/devcontainer-features/tree/main/src/imagemagick) | ImageMagick image processing library with PDF support | `ghcr.io/tmaier/devcontainer-features/imagemagick` |
 | [mc](https://github.com/tmaier/devcontainer-features/tree/main/src/mc) | MinIO Client for object storage operations | `ghcr.io/tmaier/devcontainer-features/mc` |
 | [mcp-language-server](https://github.com/tmaier/devcontainer-features/tree/main/src/mcp-language-server) | MCP Language Server for semantic code navigation | `ghcr.io/tmaier/devcontainer-features/mcp-language-server` |

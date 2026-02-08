@@ -1,0 +1,15 @@
+{
+    "id": "gitlab",
+    "version": "1.0.0",
+    "name": "GitLab CLI & Workflow",
+    "description": "Installs glab CLI and GitLab Workflow VS Code extension for GitLab integration",
+    "options": {},
+    "installsAfter": [],
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "GitLab.gitlab-workflow"
+            ]
+        }
+    }
+}
