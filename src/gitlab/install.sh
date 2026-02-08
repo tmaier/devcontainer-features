@@ -6,7 +6,7 @@ echo "Installing glab CLI (latest version)..."
 
 # Ensure curl and git are available (git is a runtime dependency of glab)
 apt-get update
-apt-get install -y --no-install-recommends curl git
+apt-get install -y --no-install-recommends curl git ca-certificates
 
 # Detect architecture
 ARCH=$(dpkg --print-architecture)
