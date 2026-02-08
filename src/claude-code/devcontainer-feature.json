@@ -3,7 +3,13 @@
   "version": "2.0.0",
   "name": "Claude Code",
   "description": "Installs Claude Code CLI for AI-powered development assistance",
-  "options": {},
+  "options": {
+    "version": {
+      "type": "string",
+      "default": "latest",
+      "description": "Version to install. Use 'latest', 'stable', or a specific semver (e.g. '1.0.58')."
+    }
+  },
   "customizations": {
     "vscode": {
       "extensions": [

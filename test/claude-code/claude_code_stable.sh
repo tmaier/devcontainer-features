@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# This test file will be executed against the 'claude_code_with_custom_user' scenario
-# to verify that Claude Code is installed correctly for the remote user.
+# This test file will be executed against the 'claude_code_stable' scenario
+# to verify that Claude Code installs correctly with version set to 'stable'.
 
 set -e
 
@@ -9,7 +9,6 @@ set -e
 source dev-container-features-test-lib
 
 # Feature-specific tests
-check "claude binary exists in user home" test -f "$HOME/.local/bin/claude"
 check "claude command available" which claude
 check "claude shows version" bash -c "claude --version"
 
