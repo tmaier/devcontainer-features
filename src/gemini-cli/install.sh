@@ -29,8 +29,7 @@ if ! command -v npm &> /dev/null; then
     exit 1
 fi
 
-# Install Gemini CLI globally as root
-# Note: Always install as root since npm's global dir requires root permissions
+# Install Gemini CLI globally (runs as root during container build)
 echo "Installing Gemini CLI globally..."
 npm install -g @google/gemini-cli
 

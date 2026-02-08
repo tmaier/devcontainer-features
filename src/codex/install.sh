@@ -29,8 +29,7 @@ if ! command -v npm &> /dev/null; then
     exit 1
 fi
 
-# Install Codex CLI globally as root
-# Note: Always install as root since npm's global dir requires root permissions
+# Install Codex CLI globally (runs as root during container build)
 echo "Installing Codex CLI globally..."
 npm install -g @openai/codex
 
