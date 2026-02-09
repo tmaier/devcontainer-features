@@ -9,7 +9,7 @@
         }
     },
     "mcp_language_server_with_go_image": {
-        "image": "mcr.microsoft.com/devcontainers/go:1-1.21-bullseye",
+        "image": "mcr.microsoft.com/devcontainers/go:1-1.24-bookworm",
         "features": {
             "mcp-language-server": {}
         }

@@ -9,3 +9,10 @@ fi
 
 # Install yek
 curl -fsSL https://azimi.me/yek.sh | bash
+
+# The installer places the binary in ~/.local/bin which may not be in PATH.
+# Copy it to /usr/local/bin to ensure it's globally available.
+if [ -f "$HOME/.local/bin/yek" ] && ! command -v yek >/dev/null 2>&1; then
+    cp "$HOME/.local/bin/yek" /usr/local/bin/yek
+    chmod +x /usr/local/bin/yek
+fi
