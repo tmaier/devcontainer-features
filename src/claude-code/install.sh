@@ -23,9 +23,18 @@ fi
 if [ -n "$_REMOTE_USER" ] && [ "$_REMOTE_USER" != "root" ]; then
     echo "Installing Claude Code for user: $_REMOTE_USER"
     su "$_REMOTE_USER" -c "curl -fsSL https://claude.ai/install.sh | bash"
+    INSTALL_HOME="$_REMOTE_USER_HOME"
 else
     echo "Installing Claude Code"
     curl -fsSL https://claude.ai/install.sh | bash
+    INSTALL_HOME="${HOME:-/root}"
+fi
+
+# Ensure claude is on PATH for all users by symlinking to /usr/local/bin
+# The native installer places the binary at ~/.local/bin/claude
+if [ -f "$INSTALL_HOME/.local/bin/claude" ] && [ ! -f /usr/local/bin/claude ]; then
+    ln -s "$INSTALL_HOME/.local/bin/claude" /usr/local/bin/claude
+    echo "Symlinked claude to /usr/local/bin/claude"
 fi
 
 echo "Claude Code installed successfully!"
