@@ -1,6 +1,6 @@
 {
   "id": "gemini-cli",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "name": "Gemini CLI",
   "description": "Installs Google Gemini CLI for AI-powered development assistance",
   "options": {},
