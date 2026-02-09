@@ -15,6 +15,7 @@ jobs:
         features:
           - adr-tools
           - chrome
+          - claude-code
           - codex
           - color
           - gemini-cli
