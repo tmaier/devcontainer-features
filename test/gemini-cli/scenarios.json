@@ -9,7 +9,7 @@
         }
     },
     "gemini_cli_with_node_image": {
-        "image": "mcr.microsoft.com/devcontainers/javascript-node:1-20-bullseye",
+        "image": "mcr.microsoft.com/devcontainers/javascript-node:1-20-bookworm",
         "features": {
             "gemini-cli": {}
         }
