@@ -7,7 +7,7 @@ Installs Claude Code CLI for AI-powered development assistance
 
 ```json
 "features": {
-    "ghcr.io/tmaier/devcontainer-features/claude-code:1": {}
+    "ghcr.io/tmaier/devcontainer-features/claude-code:2": {}
 }
 ```
 
@@ -27,13 +27,11 @@ Installs Claude Code CLI for AI-powered development assistance
 
 This feature installs [Claude Code](https://www.anthropic.com/claude-code), Anthropic's official CLI for AI-powered development assistance.
 
-## Requirements
-
-- Node.js
+Claude Code is installed using the [native installer](https://code.claude.com/docs/en/setup), which automatically keeps itself up to date.
 
 ## Manual config for `devcontainer.json`
 
-Mount the local `~/.claude/` directory into the Dev Contaier.
+Mount the local `~/.claude/` directory into the Dev Container.
 Add the following mount to the `devcontainer.json` file.
 Replace `vscode` with the actual name of your user (see `remoteUser` property)
 
@@ -51,7 +49,7 @@ Replace `vscode` with the actual name of your user (see `remoteUser` property)
 
 After installation, run `claude` in your project directory to get started.
 
-For detailed documentation, see the [Claude Code documentation](https://docs.anthropic.com/en/docs/claude-code/overview).
+For detailed documentation, see the [Claude Code documentation](https://code.claude.com/docs/en/setup).
 
 
 ---
