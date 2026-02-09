@@ -7,9 +7,11 @@ echo "Installing Google Chrome stable version..."
 apt-get update
 apt-get install -y wget gnupg2 apt-transport-https ca-certificates dbus-x11
 
-# Add Google Chrome repository
-wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | apt-key add -
-echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" > /etc/apt/sources.list.d/google-chrome.list
+# Add Google Chrome repository using modern approach (apt-key is deprecated)
+mkdir -p /etc/apt/keyrings
+wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | gpg --dearmor -o /etc/apt/keyrings/google-chrome.gpg
+chmod a+r /etc/apt/keyrings/google-chrome.gpg
+echo "deb [arch=amd64 signed-by=/etc/apt/keyrings/google-chrome.gpg] http://dl.google.com/linux/chrome/deb/ stable main" > /etc/apt/sources.list.d/google-chrome.list
 apt-get update
 
 # Install Google Chrome stable

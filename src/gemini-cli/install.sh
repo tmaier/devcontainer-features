@@ -3,10 +3,13 @@ set -e
 
 echo "Installing Gemini CLI..."
 
-# Check if Node.js is available
+# Check if Node.js is available, install if missing
 if ! command -v node &> /dev/null; then
-    echo "Error: Node.js is required but not found. Please ensure the Node.js feature is installed."
-    exit 1
+    echo "Node.js not found. Installing Node.js 22.x..."
+    apt-get update
+    apt-get install -y --no-install-recommends curl ca-certificates
+    curl -fsSL https://deb.nodesource.com/setup_22.x | bash -
+    apt-get install -y --no-install-recommends nodejs
 fi
 
 # Check Node.js version (requires 18+)
@@ -24,16 +27,10 @@ if ! command -v npm &> /dev/null; then
     exit 1
 fi
 
-# Install Gemini CLI - prefer remote user installation if available
-if [ -n "$_REMOTE_USER" ] && [ "$_REMOTE_USER" != "root" ]; then
-    echo "Installing Gemini CLI as user: $_REMOTE_USER"
-    NPM_PATH=$(which npm)
-    BIN_DIR=$(dirname "$NPM_PATH")
-    su "$_REMOTE_USER" -c "PATH=$BIN_DIR:\$PATH $NPM_PATH install -g @google/gemini-cli"
-else
-    echo "Installing Gemini CLI globally as root"
-    npm install -g @google/gemini-cli
-fi
+# Install Gemini CLI globally as root
+# Note: Always install as root since npm's global dir requires root permissions
+echo "Installing Gemini CLI globally..."
+npm install -g @google/gemini-cli
 
 # Verify installation
 if ! command -v gemini &> /dev/null; then
