@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# This test file will be executed against the 'claude_code_with_node_feature' scenario
-# to verify that Claude Code is properly installed with Node.js feature dependency.
+# This test file will be executed against the 'claude_code_default' scenario
+# to verify that Claude Code is properly installed using the native installer.
 
 set -e
 
@@ -10,8 +10,6 @@ source dev-container-features-test-lib
 
 # Feature-specific tests - simple smoke test
 # The 'check' command comes from the dev-container-features-test-lib.
-check "node is available" which node
-check "npm is available" which npm
 check "claude command available" which claude
 check "claude shows version" bash -c "claude --version"
 
