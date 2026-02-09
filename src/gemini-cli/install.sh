@@ -27,16 +27,10 @@ if ! command -v npm &> /dev/null; then
     exit 1
 fi
 
-# Install Gemini CLI - prefer remote user installation if available
-if [ -n "$_REMOTE_USER" ] && [ "$_REMOTE_USER" != "root" ]; then
-    echo "Installing Gemini CLI as user: $_REMOTE_USER"
-    NPM_PATH=$(which npm)
-    BIN_DIR=$(dirname "$NPM_PATH")
-    su "$_REMOTE_USER" -c "PATH=$BIN_DIR:\$PATH $NPM_PATH install -g @google/gemini-cli"
-else
-    echo "Installing Gemini CLI globally as root"
-    npm install -g @google/gemini-cli
-fi
+# Install Gemini CLI globally as root
+# Note: Always install as root since npm's global dir requires root permissions
+echo "Installing Gemini CLI globally..."
+npm install -g @google/gemini-cli
 
 # Verify installation
 if ! command -v gemini &> /dev/null; then

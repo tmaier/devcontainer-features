@@ -27,16 +27,10 @@ if ! command -v npm &> /dev/null; then
     exit 1
 fi
 
-# Install Codex CLI - prefer remote user installation if available
-if [ -n "$_REMOTE_USER" ] && [ "$_REMOTE_USER" != "root" ]; then
-    echo "Installing Codex CLI as user: $_REMOTE_USER"
-    NPM_PATH=$(which npm)
-    BIN_DIR=$(dirname "$NPM_PATH")
-    su "$_REMOTE_USER" -c "PATH=$BIN_DIR:\$PATH $NPM_PATH install -g @openai/codex"
-else
-    echo "Installing Codex CLI globally as root"
-    npm install -g @openai/codex
-fi
+# Install Codex CLI globally as root
+# Note: Always install as root since npm's global dir requires root permissions
+echo "Installing Codex CLI globally..."
+npm install -g @openai/codex
 
 # Verify installation
 if ! command -v codex &> /dev/null; then
