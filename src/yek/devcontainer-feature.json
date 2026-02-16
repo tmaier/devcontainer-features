@@ -1,6 +1,6 @@
 {
   "id": "yek",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "name": "yek",
   "description": "Installs yek, a tool for serializing repository files for LLM consumption",
   "options": {},

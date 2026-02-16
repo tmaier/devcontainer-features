@@ -1,6 +1,6 @@
 {
   "id": "mcp-language-server",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "name": "MCP Language Server",
   "description": "Installs MCP Language Server - runs and exposes language servers to LLMs for semantic code navigation",
   "options": {
