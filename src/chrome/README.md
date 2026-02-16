@@ -7,11 +7,23 @@ Installs Google Chrome with container-specific configurations and wrapper script
 
 ```json
 "features": {
-    "ghcr.io/iot-rocket/devcontainer-features/chrome:1": {}
+    "ghcr.io/iot-rocket/devcontainer-features/chrome:2": {}
 }
 ```
 
+## Options
 
+| Options Id | Description | Type | Default Value |
+|-----|-----|-----|-----|
+| channel | Chrome release channel to install | string | stable |
+| extensions | JSON object mapping extension IDs to settings: {"extId": {}, "extId2": {"mode": "normal_installed", "pin": false, "incognito": "not_allowed"}}. Empty object {} uses defaults: mode=force_installed, pin=true, incognito=allowed. | string | - |
+| displayMode | Display server: headless (no display), xvfb (virtual framebuffer :99), vnc (uses desktop-lite feature for browser-based VNC viewing) | string | headless |
+| screenResolution | Virtual display resolution for xvfb mode (WIDTHxHEIGHTxDEPTH). VNC mode uses desktop-lite's resolution. | string | 1920x1080x24 |
+| debuggingPort | Default remote debugging port (e.g. 9222). Empty = not set by default. | string | - |
+| chromeFlags | Space-separated additional Chrome flags always passed to the browser | string | - |
+| locale | Chrome locale/language (e.g. en-US, de-DE). Empty = system default. | string | - |
+| vncClipboard | Enable clipboard sharing between host and Chrome in VNC mode (installs autocutsel and xclip). Only applies when displayMode=vnc. | boolean | true |
+| fonts | Install additional font packages (Noto CJK, Noto Color Emoji, Liberation, DejaVu) for proper rendering of international text, emoji, and symbols in screenshots and PDFs. | boolean | false |
 
 ## What This Feature Installs
 
