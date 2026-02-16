@@ -4,5 +4,107 @@
         "features": {
             "chrome": {}
         }
+    },
+    "chrome_channel_test": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "chrome": {
+                "channel": "beta"
+            }
+        }
+    },
+    "chrome_extensions_test": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "chrome": {
+                "extensions": "{\"fcoeoabgfenejglbffodgkkbkcdhcgfn\": {}}"
+            }
+        }
+    },
+    "chrome_extensions_inline_test": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "chrome": {
+                "extensions": "{\"fcoeoabgfenejglbffodgkkbkcdhcgfn\": {}, \"cjpalhdlnbpafiamejdnhcphjbkeiagm\": {\"mode\": \"normal_installed\", \"pin\": false, \"incognito\": \"not_allowed\"}}"
+            }
+        }
+    },
+    "chrome_xvfb_test": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "chrome": {
+                "displayMode": "xvfb"
+            }
+        }
+    },
+    "chrome_vnc_test": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "ghcr.io/devcontainers/features/desktop-lite:1": {},
+            "chrome": {
+                "displayMode": "vnc"
+            }
+        }
+    },
+    "chrome_debugging_port_test": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "chrome": {
+                "debuggingPort": "9222"
+            }
+        }
+    },
+    "chrome_locale_test": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "chrome": {
+                "locale": "de-DE"
+            }
+        }
+    },
+    "chrome_flags_test": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "chrome": {
+                "chromeFlags": "--disable-web-security --allow-running-insecure-content"
+            }
+        }
+    },
+    "chrome_resolution_test": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "chrome": {
+                "displayMode": "xvfb",
+                "screenResolution": "1280x720x16"
+            }
+        }
+    },
+    "chrome_dev_channel_test": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "chrome": {
+                "channel": "dev"
+            }
+        }
+    },
+    "chrome_combined_test": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "chrome": {
+                "debuggingPort": "9222",
+                "locale": "fr-FR",
+                "chromeFlags": "--disable-web-security"
+            }
+        }
+    },
+    "chrome_vnc_no_clipboard_test": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "ghcr.io/devcontainers/features/desktop-lite:1": {},
+            "chrome": {
+                "displayMode": "vnc",
+                "vncClipboard": false
+            }
+        }
     }
 }
