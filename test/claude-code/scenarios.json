@@ -5,6 +5,14 @@
             "claude-code": {}
         }
     },
+    "claude_code_stable": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "claude-code": {
+                "version": "stable"
+            }
+        }
+    },
     "claude_code_with_custom_user": {
         "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
         "remoteUser": "vscode",

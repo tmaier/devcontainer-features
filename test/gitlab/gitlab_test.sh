@@ -1,15 +1,15 @@
 #!/bin/bash
 
+# This test file will be executed against the 'gitlab_test' scenario.
+
 set -e
 
 # Import test library bundled with the devcontainer CLI
 source dev-container-features-test-lib
 
 # Feature-specific tests
-check "node is available" which node
-check "npm is available" which npm
-check "gemini command available" which gemini
-check "gemini shows version" bash -c "gemini --version"
+check "glab is installed" which glab
+check "glab version" bash -c "glab version"
 
 # Report results
 reportResults

@@ -1,15 +1,17 @@
 #!/bin/bash
 set -e
+export DEBIAN_FRONTEND=noninteractive
 
 echo "Installing Gemini CLI..."
 
-# Check if Node.js is available, install if missing
+# Install Node.js if not available
 if ! command -v node &> /dev/null; then
     echo "Node.js not found. Installing Node.js 22.x..."
-    apt-get update
+    apt-get update -y
     apt-get install -y --no-install-recommends curl ca-certificates
     curl -fsSL https://deb.nodesource.com/setup_22.x | bash -
     apt-get install -y --no-install-recommends nodejs
+    rm -rf /var/lib/apt/lists/*
 fi
 
 # Check Node.js version (requires 18+)
@@ -27,8 +29,7 @@ if ! command -v npm &> /dev/null; then
     exit 1
 fi
 
-# Install Gemini CLI globally as root
-# Note: Always install as root since npm's global dir requires root permissions
+# Install Gemini CLI globally (runs as root during container build)
 echo "Installing Gemini CLI globally..."
 npm install -g @google/gemini-cli
 

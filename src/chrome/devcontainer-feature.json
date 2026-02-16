@@ -1,8 +1,61 @@
 {
   "id": "chrome",
-  "version": "1.0.2",
+  "version": "2.3.0",
   "name": "Google Chrome for Containers",
   "description": "Installs Google Chrome with container-specific configurations and wrapper script",
+  "options": {
+    "channel": {
+      "type": "string",
+      "enum": ["stable", "beta", "dev"],
+      "default": "stable",
+      "description": "Chrome release channel to install"
+    },
+    "extensions": {
+      "type": "string",
+      "default": "",
+      "description": "JSON object mapping extension IDs to settings: {\"extId\": {}, \"extId2\": {\"mode\": \"normal_installed\", \"pin\": false, \"incognito\": \"not_allowed\"}}. Empty object {} uses defaults: mode=force_installed, pin=true, incognito=allowed."
+    },
+    "displayMode": {
+      "type": "string",
+      "enum": ["headless", "xvfb", "vnc"],
+      "default": "headless",
+      "description": "Display server: headless (no display), xvfb (virtual framebuffer :99), vnc (uses desktop-lite feature for browser-based VNC viewing)"
+    },
+    "screenResolution": {
+      "type": "string",
+      "default": "1920x1080x24",
+      "description": "Virtual display resolution for xvfb mode (WIDTHxHEIGHTxDEPTH). VNC mode uses desktop-lite's resolution."
+    },
+    "debuggingPort": {
+      "type": "string",
+      "default": "",
+      "description": "Default remote debugging port (e.g. 9222). Empty = not set by default."
+    },
+    "chromeFlags": {
+      "type": "string",
+      "default": "",
+      "description": "Space-separated additional Chrome flags always passed to the browser"
+    },
+    "locale": {
+      "type": "string",
+      "default": "",
+      "description": "Chrome locale/language (e.g. en-US, de-DE). Empty = system default."
+    },
+    "vncClipboard": {
+      "type": "boolean",
+      "default": true,
+      "description": "Enable clipboard sharing between host and Chrome in VNC mode (installs autocutsel and xclip). Only applies when displayMode=vnc."
+    },
+    "fonts": {
+      "type": "boolean",
+      "default": false,
+      "description": "Install additional font packages (Noto CJK, Noto Color Emoji, Liberation, DejaVu) for proper rendering of international text, emoji, and symbols in screenshots and PDFs."
+    }
+  },
+  "containerEnv": {
+    "CHROME_BIN": "/usr/local/bin/chrome",
+    "PUPPETEER_EXECUTABLE_PATH": "/usr/local/bin/chrome"
+  },
   "customizations": {
     "vscode": {
       "settings": {
@@ -10,5 +63,5 @@
       }
     }
   },
-  "installsAfter": []
+  "installsAfter": ["ghcr.io/devcontainers/features/desktop-lite"]
 }

@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# This test file will be executed against the 'claude_code_stable' scenario
+# to verify that Claude Code installs correctly with version set to 'stable'.
+
 set -e
 
 # Import test library bundled with the devcontainer CLI

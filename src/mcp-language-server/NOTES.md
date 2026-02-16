@@ -4,7 +4,7 @@ This feature installs [MCP Language Server](https://github.com/isaacphi/mcp-lang
 
 ## Requirements
 
-- Go
+- Go (automatically installed if not available)
 - A language server for your programming language (installed separately)
 
 ## Supported Language Servers

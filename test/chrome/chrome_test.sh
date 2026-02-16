@@ -13,6 +13,8 @@ source dev-container-features-test-lib
 check "chrome wrapper script exists" test -f /usr/local/bin/chrome
 check "chrome wrapper script is executable" test -x /usr/local/bin/chrome
 check "chrome shows version" bash -c "chrome --version"
+check "config file exists" test -f /etc/chrome-wrapper/config
+check "config has headless display mode" bash -c "grep -q 'DISPLAY_MODE=\"headless\"' /etc/chrome-wrapper/config"
 
 # Report results
 # If any of the checks above exited with a non-zero exit code, the test will fail.
