@@ -7,7 +7,7 @@ Installs Claude Code CLI for AI-powered development assistance
 
 ```json
 "features": {
-    "ghcr.io/iot-rocket/devcontainer-features/claude-code:2": {}
+    "ghcr.io/tmaier/devcontainer-features/claude-code:2": {}
 }
 ```
 
@@ -67,4 +67,4 @@ For detailed documentation, see the [Claude Code documentation](https://code.cla
 
 ---
 
-_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/iot-rocket/devcontainer-features/blob/main/src/claude-code/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._
+_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/tmaier/devcontainer-features/blob/main/src/claude-code/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._

@@ -7,7 +7,7 @@ Installs glab CLI and GitLab Workflow VS Code extension for GitLab integration
 
 ```json
 "features": {
-    "ghcr.io/iot-rocket/devcontainer-features/gitlab:1": {}
+    "ghcr.io/tmaier/devcontainer-features/gitlab:1": {}
 }
 ```
 
@@ -67,4 +67,4 @@ glab repo view --web
 
 ---
 
-_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/iot-rocket/devcontainer-features/blob/main/src/gitlab/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._
+_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/tmaier/devcontainer-features/blob/main/src/gitlab/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._

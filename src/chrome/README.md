@@ -7,7 +7,7 @@ Installs Google Chrome with container-specific configurations and wrapper script
 
 ```json
 "features": {
-    "ghcr.io/iot-rocket/devcontainer-features/chrome:2": {}
+    "ghcr.io/tmaier/devcontainer-features/chrome:2": {}
 }
 ```
 
@@ -94,7 +94,7 @@ Select which Chrome release channel to install using the `channel` option:
 ```json
 {
   "features": {
-    "ghcr.io/iot-rocket/devcontainer-features/chrome": {
+    "ghcr.io/tmaier/devcontainer-features/chrome": {
       "channel": "beta"
     }
   }
@@ -114,7 +114,7 @@ No display server is installed. Chrome runs with `--headless=new` when no DISPLA
 ```json
 {
   "features": {
-    "ghcr.io/iot-rocket/devcontainer-features/chrome": {}
+    "ghcr.io/tmaier/devcontainer-features/chrome": {}
   }
 }
 ```
@@ -126,7 +126,7 @@ Installs Xvfb and auto-starts a virtual display on `:99` when no DISPLAY is set.
 ```json
 {
   "features": {
-    "ghcr.io/iot-rocket/devcontainer-features/chrome": {
+    "ghcr.io/tmaier/devcontainer-features/chrome": {
       "displayMode": "xvfb",
       "screenResolution": "1920x1080x24"
     }
@@ -146,7 +146,7 @@ Delegates to the `ghcr.io/devcontainers/features/desktop-lite` feature for a ful
 {
   "features": {
     "ghcr.io/devcontainers/features/desktop-lite:1": {},
-    "ghcr.io/iot-rocket/devcontainer-features/chrome": {
+    "ghcr.io/tmaier/devcontainer-features/chrome": {
       "displayMode": "vnc"
     }
   }
@@ -220,7 +220,7 @@ Install one or more extensions with default settings:
 ```json
 {
   "features": {
-    "ghcr.io/iot-rocket/devcontainer-features/chrome": {
+    "ghcr.io/tmaier/devcontainer-features/chrome": {
       "extensions": "{\"fcoeoabgfenejglbffodgkkbkcdhcgfn\": {}, \"cjpalhdlnbpafiamejdnhcphjbkeiagm\": {}}"
     }
   }
@@ -234,7 +234,7 @@ Override settings for individual extensions by providing values in the settings 
 ```json
 {
   "features": {
-    "ghcr.io/iot-rocket/devcontainer-features/chrome": {
+    "ghcr.io/tmaier/devcontainer-features/chrome": {
       "extensions": "{\"fcoeoabgfenejglbffodgkkbkcdhcgfn\": {}, \"cjpalhdlnbpafiamejdnhcphjbkeiagm\": {\"mode\": \"normal_installed\", \"pin\": false, \"incognito\": \"not_allowed\"}}"
     }
   }
@@ -260,7 +260,7 @@ Set a default remote debugging port that's always passed to Chrome:
 ```json
 {
   "features": {
-    "ghcr.io/iot-rocket/devcontainer-features/chrome": {
+    "ghcr.io/tmaier/devcontainer-features/chrome": {
       "debuggingPort": "9222"
     }
   }
@@ -274,7 +274,7 @@ Pass additional Chrome flags to every invocation:
 ```json
 {
   "features": {
-    "ghcr.io/iot-rocket/devcontainer-features/chrome": {
+    "ghcr.io/tmaier/devcontainer-features/chrome": {
       "chromeFlags": "--disable-web-security --allow-running-insecure-content"
     }
   }
@@ -288,7 +288,7 @@ Install additional font packages for proper rendering of international text, emo
 ```json
 {
   "features": {
-    "ghcr.io/iot-rocket/devcontainer-features/chrome": {
+    "ghcr.io/tmaier/devcontainer-features/chrome": {
       "fonts": true
     }
   }
@@ -304,7 +304,7 @@ Set the Chrome UI language:
 ```json
 {
   "features": {
-    "ghcr.io/iot-rocket/devcontainer-features/chrome": {
+    "ghcr.io/tmaier/devcontainer-features/chrome": {
       "locale": "de-DE"
     }
   }
@@ -346,4 +346,4 @@ For more detailed documentation, see `/usr/local/share/chrome-wrapper/README.md`
 
 ---
 
-_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/iot-rocket/devcontainer-features/blob/main/src/chrome/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._
+_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/tmaier/devcontainer-features/blob/main/src/chrome/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._
