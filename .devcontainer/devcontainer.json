@@ -24,7 +24,7 @@
     "features": {
         "ghcr.io/devcontainers/features/docker-in-docker:2": {},
         "ghcr.io/devcontainers/features/node:1": {},
-        "../src/claude-code": {}
+        "ghcr.io/tmaier/devcontainer-features/claude-code:2": {}
     },
     "updateContentCommand": "npm install -g @devcontainers/cli"
 }
