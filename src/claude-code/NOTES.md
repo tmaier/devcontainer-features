@@ -33,6 +33,38 @@ Replace `vscode` with the actual name of your user (see `remoteUser` property).
   ],
 ```
 
+## Chrome Integration (`claude --chrome`)
+
+Claude Code supports a Chrome integration via `claude --chrome`. To use this inside a Dev Container, combine the `claude-code` feature with the [`chrome`](https://github.com/tmaier/devcontainer-features/tree/main/src/chrome) feature configured for VNC display mode:
+
+```jsonc
+// .devcontainer/devcontainer.json
+{
+    "features": {
+        "ghcr.io/devcontainers/features/desktop-lite:1": {},
+        "ghcr.io/tmaier/devcontainer-features/chrome:2": {
+            // Extensions:
+            //   fdgfkebogiimcoedlicjlajpkdmockpc = Meta Pixel Helper (https://chromewebstore.google.com/detail/meta-pixel-helper/fdgfkebogiimcoedlicjlajpkdmockpc)
+            //   fmkadmapgofadopljbjfkapdkoienihi = React Developer Tools (https://chromewebstore.google.com/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi)
+            "extensions": "{\"fdgfkebogiimcoedlicjlajpkdmockpc\": {}, \"fmkadmapgofadopljbjfkapdkoienihi\": {}}",
+            "displayMode": "vnc"
+        },
+        "ghcr.io/tmaier/devcontainer-features/claude-code:2": {}
+    },
+    "forwardPorts": [5901, 6080],
+    "portsAttributes": {
+        "5901": { "label": "tigervnc" },
+        "6080": { "label": "novnc" }
+    }
+}
+```
+
+After the container starts, connect to the desktop via:
+- **noVNC (browser):** http://localhost:6080
+- **VNC client:** vnc://localhost:5901
+
+Then run `claude --chrome` in the terminal to launch the Chrome integration.
+
 ## Usage
 
 After installation, run `claude` in your project directory to get started.
