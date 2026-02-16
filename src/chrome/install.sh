@@ -17,7 +17,12 @@ case "$ARCH" in
 esac
 
 CHANNEL="${CHANNEL:-stable}"
-CHROME_PACKAGE="google-chrome-${CHANNEL}"
+# The apt package for the "dev" channel is named "google-chrome-unstable"
+if [ "$CHANNEL" = "dev" ]; then
+    CHROME_PACKAGE="google-chrome-unstable"
+else
+    CHROME_PACKAGE="google-chrome-${CHANNEL}"
+fi
 
 echo "Installing Google Chrome (${CHANNEL} channel)..."
 
