@@ -8,6 +8,11 @@
       "type": "string",
       "default": "latest",
       "description": "Version to install. Use 'latest', 'stable', or a specific semver (e.g. '1.0.58')."
+    },
+    "yoloAlias": {
+      "type": "boolean",
+      "default": false,
+      "description": "Create a 'yolo' shell alias for 'claude --allow-dangerously-skip-permissions' in bash, zsh, and fish."
     }
   },
   "customizations": {

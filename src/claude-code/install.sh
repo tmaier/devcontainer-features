@@ -53,4 +53,34 @@ if [ -f "$INSTALL_HOME/.local/bin/claude" ] && [ ! -f /usr/local/bin/claude ]; t
     echo "Symlinked claude to /usr/local/bin/claude"
 fi
 
+# Set up yolo alias if requested
+if [ "${YOLOALIAS:-false}" = "true" ]; then
+    echo "Setting up 'yolo' alias..."
+    ALIAS_CMD='alias yolo="claude --allow-dangerously-skip-permissions"'
+    TARGET_HOME="${INSTALL_HOME}"
+
+    # bash
+    echo "$ALIAS_CMD" >> "$TARGET_HOME/.bashrc"
+
+    # zsh
+    echo "$ALIAS_CMD" >> "$TARGET_HOME/.zshrc"
+
+    # fish — create a function file (idiomatic for fish)
+    FISH_FUNC_DIR="$TARGET_HOME/.config/fish/functions"
+    mkdir -p "$FISH_FUNC_DIR"
+    cat > "$FISH_FUNC_DIR/yolo.fish" << 'FISHEOF'
+function yolo --description "claude --allow-dangerously-skip-permissions"
+    claude --allow-dangerously-skip-permissions $argv
+end
+FISHEOF
+
+    # Fix ownership if installing for non-root user
+    if [ -n "$_REMOTE_USER" ] && [ "$_REMOTE_USER" != "root" ]; then
+        chown "$_REMOTE_USER" "$TARGET_HOME/.bashrc" "$TARGET_HOME/.zshrc"
+        chown -R "$_REMOTE_USER" "$FISH_FUNC_DIR"
+    fi
+
+    echo "yolo alias configured for bash, zsh, and fish."
+fi
+
 echo "Claude Code installed successfully!"

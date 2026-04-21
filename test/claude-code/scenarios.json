@@ -19,5 +19,13 @@
         "features": {
             "claude-code": {}
         }
+    },
+    "claude_code_yolo_alias": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "claude-code": {
+                "yoloAlias": true
+            }
+        }
     }
 }

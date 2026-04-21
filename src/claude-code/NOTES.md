@@ -13,6 +13,10 @@ By default, the `latest` release channel is installed. You can also specify:
 
 The channel chosen at install time becomes the default for auto-updates.
 
+## YOLO Alias
+
+When `yoloAlias` is set to `true`, a `yolo` shell alias is created that expands to `claude --allow-dangerously-skip-permissions`. The alias is configured for bash, zsh, and fish.
+
 ## Auto-Updates
 
 The native binary automatically updates in the background. Update checks are performed on startup and periodically while running. To disable auto-updates, set the `DISABLE_AUTOUPDATER=1` environment variable.
