@@ -53,4 +53,61 @@ if [ -f "$INSTALL_HOME/.local/bin/claude" ] && [ ! -f /usr/local/bin/claude ]; t
     echo "Symlinked claude to /usr/local/bin/claude"
 fi
 
+# Set up yolo alias if requested
+if [ "${YOLOALIAS:-false}" = "true" ]; then
+    echo "Setting up 'yolo' alias..."
+    ALIAS_CMD='alias yolo="claude --allow-dangerously-skip-permissions"'
+    TARGET_HOME="${INSTALL_HOME}"
+
+    add_shell_alias_if_missing() {
+        local rc_file="$1"
+        local alias_name="$2"
+        local alias_cmd="$3"
+
+        if [ -f "$rc_file" ] && grep -Eq "^[[:space:]]*alias[[:space:]]+${alias_name}=" "$rc_file"; then
+            echo "Skipping $rc_file: alias '$alias_name' already exists."
+            return 0
+        fi
+
+        touch "$rc_file"
+        # Ensure the file ends with a newline before appending
+        if [ -s "$rc_file" ] && [ "$(tail -c 1 "$rc_file" | wc -l)" -eq 0 ]; then
+            printf '\n' >> "$rc_file"
+        fi
+        printf '%s\n' "$alias_cmd" >> "$rc_file"
+    }
+
+    # bash
+    add_shell_alias_if_missing "$TARGET_HOME/.bashrc" "yolo" "$ALIAS_CMD"
+
+    # zsh
+    add_shell_alias_if_missing "$TARGET_HOME/.zshrc" "yolo" "$ALIAS_CMD"
+
+    # fish — create a function file (idiomatic for fish)
+    FISH_FUNC_DIR="$TARGET_HOME/.config/fish/functions"
+    FISH_FUNC_FILE="$FISH_FUNC_DIR/yolo.fish"
+    FISH_CREATED=false
+    if [ -f "$FISH_FUNC_FILE" ]; then
+        echo "Skipping $FISH_FUNC_FILE: function already exists."
+    else
+        mkdir -p "$FISH_FUNC_DIR"
+        cat > "$FISH_FUNC_FILE" << 'FISHEOF'
+function yolo --description "claude --allow-dangerously-skip-permissions"
+    claude --allow-dangerously-skip-permissions $argv
+end
+FISHEOF
+        FISH_CREATED=true
+    fi
+
+    # Fix ownership if installing for non-root user
+    if [ -n "$_REMOTE_USER" ] && [ "$_REMOTE_USER" != "root" ]; then
+        chown "$_REMOTE_USER" "$TARGET_HOME/.bashrc" "$TARGET_HOME/.zshrc"
+        if [ "$FISH_CREATED" = true ]; then
+            chown "$_REMOTE_USER" "$TARGET_HOME/.config" "$TARGET_HOME/.config/fish" "$FISH_FUNC_DIR" "$FISH_FUNC_FILE"
+        fi
+    fi
+
+    echo "yolo alias configured for bash, zsh, and fish."
+fi
+
 echo "Claude Code installed successfully!"

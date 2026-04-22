@@ -1,6 +1,6 @@
 {
   "id": "claude-code",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "name": "Claude Code",
   "description": "Installs Claude Code CLI for AI-powered development assistance",
   "options": {
@@ -8,6 +8,11 @@
       "type": "string",
       "default": "latest",
       "description": "Version to install. Use 'latest', 'stable', or a specific semver (e.g. '1.0.58')."
+    },
+    "yoloAlias": {
+      "type": "boolean",
+      "default": false,
+      "description": "Create a 'yolo' shell alias for 'claude --allow-dangerously-skip-permissions' in bash, zsh, and fish."
     }
   },
   "customizations": {
