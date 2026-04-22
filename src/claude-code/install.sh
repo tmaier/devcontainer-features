@@ -70,6 +70,10 @@ if [ "${YOLOALIAS:-false}" = "true" ]; then
         fi
 
         touch "$rc_file"
+        # Ensure the file ends with a newline before appending
+        if [ -s "$rc_file" ] && [ "$(tail -c 1 "$rc_file" | wc -l)" -eq 0 ]; then
+            printf '\n' >> "$rc_file"
+        fi
         printf '%s\n' "$alias_cmd" >> "$rc_file"
     }
 
@@ -82,6 +86,7 @@ if [ "${YOLOALIAS:-false}" = "true" ]; then
     # fish — create a function file (idiomatic for fish)
     FISH_FUNC_DIR="$TARGET_HOME/.config/fish/functions"
     FISH_FUNC_FILE="$FISH_FUNC_DIR/yolo.fish"
+    FISH_CREATED=false
     if [ -f "$FISH_FUNC_FILE" ]; then
         echo "Skipping $FISH_FUNC_FILE: function already exists."
     else
@@ -91,12 +96,15 @@ function yolo --description "claude --allow-dangerously-skip-permissions"
     claude --allow-dangerously-skip-permissions $argv
 end
 FISHEOF
+        FISH_CREATED=true
     fi
 
     # Fix ownership if installing for non-root user
     if [ -n "$_REMOTE_USER" ] && [ "$_REMOTE_USER" != "root" ]; then
         chown "$_REMOTE_USER" "$TARGET_HOME/.bashrc" "$TARGET_HOME/.zshrc"
-        chown "$_REMOTE_USER" "$FISH_FUNC_FILE"
+        if [ "$FISH_CREATED" = true ]; then
+            chown "$_REMOTE_USER" "$TARGET_HOME/.config" "$TARGET_HOME/.config/fish" "$FISH_FUNC_DIR" "$FISH_FUNC_FILE"
+        fi
     fi
 
     echo "yolo alias configured for bash, zsh, and fish."

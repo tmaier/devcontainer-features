@@ -15,6 +15,7 @@ check "yolo alias in zshrc" bash -c "grep -Fq 'claude --allow-dangerously-skip-p
 check "fish yolo function body" bash -c "test -f ~/.config/fish/functions/yolo.fish && grep -Fq 'claude --allow-dangerously-skip-permissions' ~/.config/fish/functions/yolo.fish"
 check "bashrc owned by current user" bash -c "test \"$(stat -c '%U' ~/.bashrc)\" = \"$(whoami)\""
 check "zshrc owned by current user" bash -c "test \"$(stat -c '%U' ~/.zshrc)\" = \"$(whoami)\""
+check "fish functions dir owned by current user" bash -c "test \"$(stat -c '%U' ~/.config/fish/functions)\" = \"$(whoami)\""
 check "fish function owned by current user" bash -c "test \"$(stat -c '%U' ~/.config/fish/functions/yolo.fish)\" = \"$(whoami)\""
 check "yolo resolves in bash" bash -ic "type yolo"
 
