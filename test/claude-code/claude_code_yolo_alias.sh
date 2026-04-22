@@ -10,9 +10,9 @@ source dev-container-features-test-lib
 
 # Feature-specific tests
 check "claude command available" which claude
-check "yolo alias in bashrc" bash -c "grep -q 'alias yolo=' ~/.bashrc"
-check "yolo alias in zshrc" bash -c "grep -q 'alias yolo=' ~/.zshrc"
-check "fish yolo function exists" bash -c "test -f ~/.config/fish/functions/yolo.fish"
+check "yolo alias in bashrc" bash -c "grep -Fq 'claude --allow-dangerously-skip-permissions' ~/.bashrc"
+check "yolo alias in zshrc" bash -c "grep -Fq 'claude --allow-dangerously-skip-permissions' ~/.zshrc"
+check "fish yolo function body" bash -c "test -f ~/.config/fish/functions/yolo.fish && grep -Fq 'claude --allow-dangerously-skip-permissions' ~/.config/fish/functions/yolo.fish"
 check "yolo resolves in bash" bash -ic "type yolo"
 
 # Report results

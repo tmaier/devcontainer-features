@@ -17,6 +17,10 @@ The channel chosen at install time becomes the default for auto-updates.
 
 When `yoloAlias` is set to `true`, a `yolo` shell alias is created that expands to `claude --allow-dangerously-skip-permissions`. The alias is configured for bash, zsh, and fish.
 
+> **Warning:** `--allow-dangerously-skip-permissions` disables Claude Code's normal permission checks and confirmation prompts for potentially sensitive actions. This meaningfully reduces safety and may allow unintended or unsafe changes, so only enable `yoloAlias` if you understand and accept the security implications.
+>
+> Creating this alias may also override an existing `yolo` alias in your shell configuration.
+
 ## Auto-Updates
 
 The native binary automatically updates in the background. Update checks are performed on startup and periodically while running. To disable auto-updates, set the `DISABLE_AUTOUPDATER=1` environment variable.

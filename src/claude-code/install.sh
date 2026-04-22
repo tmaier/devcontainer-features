@@ -59,11 +59,25 @@ if [ "${YOLOALIAS:-false}" = "true" ]; then
     ALIAS_CMD='alias yolo="claude --allow-dangerously-skip-permissions"'
     TARGET_HOME="${INSTALL_HOME}"
 
+    add_shell_alias_if_missing() {
+        local rc_file="$1"
+        local alias_name="$2"
+        local alias_cmd="$3"
+
+        if [ -f "$rc_file" ] && grep -Eq "^[[:space:]]*alias[[:space:]]+${alias_name}=" "$rc_file"; then
+            echo "Skipping $rc_file: alias '$alias_name' already exists."
+            return 0
+        fi
+
+        touch "$rc_file"
+        printf '%s\n' "$alias_cmd" >> "$rc_file"
+    }
+
     # bash
-    echo "$ALIAS_CMD" >> "$TARGET_HOME/.bashrc"
+    add_shell_alias_if_missing "$TARGET_HOME/.bashrc" "yolo" "$ALIAS_CMD"
 
     # zsh
-    echo "$ALIAS_CMD" >> "$TARGET_HOME/.zshrc"
+    add_shell_alias_if_missing "$TARGET_HOME/.zshrc" "yolo" "$ALIAS_CMD"
 
     # fish — create a function file (idiomatic for fish)
     FISH_FUNC_DIR="$TARGET_HOME/.config/fish/functions"
