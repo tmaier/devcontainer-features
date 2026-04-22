@@ -19,7 +19,7 @@ When `yoloAlias` is set to `true`, a `yolo` shell alias is created that expands 
 
 > **Warning:** `--allow-dangerously-skip-permissions` disables Claude Code's normal permission checks and confirmation prompts for potentially sensitive actions. This meaningfully reduces safety and may allow unintended or unsafe changes, so only enable `yoloAlias` if you understand and accept the security implications.
 >
-> If a `yolo` alias or function already exists in your shell configuration, the installer will skip adding it to avoid overwriting your setup.
+> If a `yolo` alias already exists in `.bashrc`/`.zshrc`, or a `yolo.fish` function file already exists, the installer will skip adding it to avoid overwriting your setup.
 
 ## Auto-Updates
 
