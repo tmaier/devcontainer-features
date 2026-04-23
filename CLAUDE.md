@@ -146,8 +146,8 @@ devcontainer features test --global-scenarios-only .
 
 #### Validation
 ```bash
-# Validate all devcontainer-feature.json files
-devcontainer features validate ./src
+# Package a feature to validate its devcontainer-feature.json
+devcontainer features package src/<feature-name>
 ```
 
 ## Distribution and Publishing
@@ -162,7 +162,7 @@ Features are automatically published to GitHub Container Registry (GHCR) via Git
 
 ### GitHub Actions Workflows
 - **Release workflow** (`.github/workflows/release.yaml`): Publishes features to GHCR and auto-generates README.md files (manual trigger)
-- **Validation workflow** (`.github/workflows/validate.yml`): Validates feature definitions on PRs
+- **Validation workflow** (`.github/workflows/validate.yaml`): Validates feature definitions on PRs
 - **Testing workflow** (`.github/workflows/test.yaml`): Tests features on push/PR
 
 ## Documentation Guidelines
