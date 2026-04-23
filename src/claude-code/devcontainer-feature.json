@@ -1,6 +1,6 @@
 {
   "id": "claude-code",
-  "version": "2.2.0",
+  "version": "2.2.1",
   "name": "Claude Code",
   "description": "Installs Claude Code CLI for AI-powered development assistance",
   "options": {
