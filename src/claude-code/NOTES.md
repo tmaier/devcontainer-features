@@ -52,6 +52,7 @@ Add the following to your `devcontainer.json`. Replace `/home/vscode` with the a
 - The volume mount overlays `plugins/` with a named Docker volume, isolating it from the host. Docker creates this volume automatically on first use.
 - `${devcontainerId}` is unique per project and stable across rebuilds, so each Dev Container gets its own plugins volume.
 - `~/.claude/` must exist on the host. Run Claude Code once on your host, or create it manually: `mkdir -p ~/.claude`.
+- With a non-root `remoteUser`, you may need to add `sudo chown -R $(id -u):$(id -g) $HOME/.claude/plugins` to your `postCreateCommand` ([vscode-remote-release#9931](https://github.com/microsoft/vscode-remote-release/issues/9931)).
 
 ## Chrome Integration (`claude --chrome`)
 
