@@ -25,21 +25,33 @@ When `yoloAlias` is set to `true`, a `yolo` shell alias is created that expands 
 
 The native binary automatically updates in the background. Update checks are performed on startup and periodically while running. To disable auto-updates, set the `DISABLE_AUTOUPDATER=1` environment variable.
 
-## Manual config for `devcontainer.json`
+## Persisting configuration across container rebuilds
 
-Mount the local `~/.claude/` directory into the Dev Container.
-Add the following mount to the `devcontainer.json` file.
-Replace `vscode` with the actual name of your user (see `remoteUser` property).
+To share your Claude Code configuration, conversation history, and credentials between your host and the Dev Container, mount `~/.claude/` into the container.
 
-```json
+**Important:** The `plugins/` subdirectory stores hardcoded absolute paths (e.g., `/home/vscode/.claude/plugins/...`). When the same directory is read from the host (where the path is `/Users/<you>/.claude/...`), these paths are invalid, causing a `corrupted installLocation` error. To avoid this, overlay `plugins/` with a per-container Docker volume.
+
+Add the following to your `devcontainer.json`. Replace `/home/vscode` with the actual home directory of your remote user (see `remoteUser` property).
+
+```jsonc
   "mounts": [
     {
       "source": "${localEnv:HOME}/.claude",
       "target": "/home/vscode/.claude",
       "type": "bind"
+    },
+    {
+      "source": "claude-plugins-${devcontainerId}",
+      "target": "/home/vscode/.claude/plugins",
+      "type": "volume"
     }
   ],
 ```
+
+- The bind mount shares your full `~/.claude/` directory (settings, credentials, conversation history, etc.) with the container.
+- The volume mount overlays `plugins/` with a named Docker volume, isolating it from the host. Docker creates this volume automatically on first use.
+- `${devcontainerId}` is unique per project and stable across rebuilds, so each Dev Container gets its own plugins volume.
+- `~/.claude/` must exist on the host. Run Claude Code once on your host, or create it manually: `mkdir -p ~/.claude`.
 
 ## Chrome Integration (`claude --chrome`)
 
